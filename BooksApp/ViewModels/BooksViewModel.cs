@@ -12,7 +12,7 @@ namespace BooksApp.ViewModels
     public class BooksViewModel : NotifyPropertyChanged
     {
         private Models.AppContext _db;
-        private RelayCommand _editCommand;
+        private RelayCommand _updateCommand;
         private RelayCommand _removeCommand;
         private IEnumerable<Book> _books;
 
@@ -33,12 +33,12 @@ namespace BooksApp.ViewModels
             Books = _db.Books.Local.ToBindingList();
         }
 
-        public RelayCommand EditBook
+        public RelayCommand UpdateBook
         {
             get
             {
-                return _editCommand ??
-                    (_editCommand = new RelayCommand(obj => _db.SaveChanges()));
+                return _updateCommand ??
+                    (_updateCommand = new RelayCommand(obj => _db.SaveChanges()));
             }
         }
 

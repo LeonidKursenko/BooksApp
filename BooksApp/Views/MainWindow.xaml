@@ -37,7 +37,7 @@
                 </DataGrid.Columns>
             </DataGrid>
             <StackPanel Grid.Row="1">
-                <Button Command="{Binding EditBook}">Update</Button>
+                <Button Command="{Binding UpdateBook}">Update</Button>
                 <Button Command="{Binding RemoveBook}" 
                         CommandParameter="{Binding ElementName=BooksDataGrid, Path=SelectedItem}">Remove Book</Button>
             </StackPanel>
